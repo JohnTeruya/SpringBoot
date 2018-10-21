@@ -31,8 +31,8 @@ public class DoacaoController {
 	@RequestMapping("/doacoes")
 	public ModelAndView listaDoacoes() {
 		ModelAndView mv = new ModelAndView("index");
-		Iterable<Doacao> Doacoes = dr.findAll();
-		mv.addObject("doacoes", Doacoes);
+		Iterable<Doacao> doacoes = dr.findAll();
+		mv.addObject("doacoes", doacoes);
 		return mv;
 	}
 }
