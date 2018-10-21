@@ -1,9 +1,21 @@
 <!DOCTYPE html>
+<html xmlns:th="http://thymleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymleaf/layout">
 <head>
+	<meta charset="utf-8">
+	<title>DoaçõesApp</title>	
 </head>
 <body>
-
-	<h3> Hello World! </h3>
-
+	
+	<h1>Lista de Doações</h1>
+	<h3><a href="/cadastrarDoacao">Cadastrar Doação</a></h3>
+	
+	<div th:each="doacao:${doacoes}"></div>
+		<div class="row">
+			<p><span th:text="${doacao.nome}"></span></p>
+			<p><span th:text="${doacao.local}"></span></p>
+			<p><span th:text="${doacao.data}"></span></p>
+			<p><span th:text="${doacao.horario}"></span></p>
+		</div>
 </body>
 </html>

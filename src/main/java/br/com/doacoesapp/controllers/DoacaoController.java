@@ -4,15 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.doacoesapp.models.Doacao;
-import br.com.doacoesapp.repository.DoaçãoRepository;
+import br.com.doacoesapp.repository.DoacaoRepository;
 
 @Controller
-public class DoaçãoController {
+public class DoacaoController {
 	
 	@Autowired
-	private DoaçãoRepository dr;
+	private DoacaoRepository dr;
 	
 	@RequestMapping(value="/cadastrarDoacao", method=RequestMethod.GET)
 	public String form() {
@@ -27,4 +28,11 @@ public class DoaçãoController {
 		return "redirect:/cadastrarDoacao";
 	}
 	
+	@RequestMapping("/doacoes")
+	public ModelAndView listaDoacoes() {
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Doacao> Doacoes = dr.findAll();
+		mv.addObject("doacoes", Doacoes);
+		return mv;
+	}
 }
