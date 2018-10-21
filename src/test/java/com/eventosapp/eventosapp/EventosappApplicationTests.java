@@ -1,4 +1,4 @@
-package br.com.doacoesapp;
+package com.eventosapp.eventosapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DoacoesappApplicationTests {
+public class EventosappApplicationTests {
 
 	@Test
 	public void contextLoads() {
