@@ -40,8 +40,9 @@ public class DoacaoController {
 	@RequestMapping("/{codigo}")
 	public ModelAndView detalhesDoacao(@PathVariable("codigo") long codigo) {
 		Doacao doacao = dr.findByCodigo(codigo);
-		ModelAndView mv = new ModelAndView("detalhesDoacao");
+		ModelAndView mv = new ModelAndView("doacao/detalhesDoacao");
 		mv.addObject("doacao", doacao);
+		System.out.println("doacao" + doacao);
 		return mv;
 	}
 	

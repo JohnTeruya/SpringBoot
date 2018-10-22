@@ -22,7 +22,7 @@
 		</thread>
 		<tbody>
 			<tr th:each="doacao : ${doacoes}">
-				<td><a th:href="${(#mvc.url('EC#detalhesDoacao').arg(0, doacao.codigo)).build()}"><span th:text="${doacao.nome}"></a></span></td>
+				<td><a th:href="${(#mvc.url('DC#detalhesDoacao').arg(0, doacao.codigo)).build()}"><span th:text="${doacao.nome}"></a></span></td>
 				<td><span th:text="${doacao.local}"></span></td>
 				<td><span th:text="${doacao.data}"></span></td>
 				<td><span th:text="${doacao.horario}"></span></td>
