@@ -2,22 +2,34 @@
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8">
 	<title>DoaçõesApp</title>	
 </head>
 <body>
-	
 	<h1>Lista de Doações</h1>
-	<h3><a href="/cadastrarDoacao">Cadastrar Doação</a></h3>
-	
-	<div th:each="doacao : ${doacoes}">
-		<div class="row">
-			<p><span th:text="${doacao.nome}"></span></p>
-			<p><span th:text="${doacao.local}"></span></p>
-			<p><span th:text="${doacao.data}"></span></p>
-			<p><span th:text="${doacao.horario}"></span></p>
-		</div>
-	</div>
-
+	<h3><a href="/cadastrarDoacao" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Doação</a></h3>
+	<table class="container">
+		<thread>
+			<tr>
+				<th>Nome</th>
+				<th>Local</th>
+				<th>Data</th>
+				<th>Horario</th>
+			</tr>
+		</thread>
+		<tbody>
+			<tr th:each="doacao : ${doacoes}">
+				<td><a th:href="${(#mvc.url('EC#detalhesDoacao').arg(0, doacao.codigo)).build()}"><span th:text="${doacao.nome}"></a></span></td>
+				<td><span th:text="${doacao.local}"></span></td>
+				<td><span th:text="${doacao.data}"></span></td>
+				<td><span th:text="${doacao.horario}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- Deafult Scripts -->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
 </html>
