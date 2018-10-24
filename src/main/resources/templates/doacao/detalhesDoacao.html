@@ -18,6 +18,13 @@
 				<p>Data: <span th:text="${doacao.data}"></span></p>
 				<p>Horário: <span th:text="${doacao.horario}"></span></p>
 			</div>
+			
+			<form method="POST">
+				<input type="text" value="" name="NomeDoador">
+				<input type="text" value="" name="rg">
+				<button type="submit"> Adicionar Doador </button>
+			</form>
+			
 		</div>
 	<!-- Deafult Scripts -->	
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
