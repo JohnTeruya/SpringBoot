@@ -5,12 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
+
 @Entity
 public class Doador{
 	
 	@Id
+	@NotEmpty
 	private String rg;
 	
+	@NotEmpty
 	private String nomeDoador;
 	
 	@ManyToOne
