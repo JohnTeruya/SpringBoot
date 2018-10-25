@@ -9,8 +9,17 @@
 	<title>DoaçõesApp</title>	
 </head>
 <body>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+  				<a href="#" class="brand-logo">Logo</a>
+ 				 <ul id="nav-mobile" class="right hide-on-med-and-down">
+    				<li><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista Doações</a></li>
+  				</ul>
+			</div>
+  		</nav>
+	</header>
 	<h1>Cadastro de Doações:</h1>
-	<h3><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista Doações</a></h3>
 	<form class="container" method="POST">
 		Nome: <input type="text" value="" name="nome"/>
 		<div class="row">
@@ -21,7 +30,7 @@
 				Data: <input type="date" value="" name="data"/>
 			</div>
 			<div class="input-field col s3">
-				Horario: <input type="text" value="" name="horario"/>
+				Horario: <input type="time" value="" name="horario"/>
 			</div>
 		</div>
 		<button class="waves-effect waves-light btn" type="submit">Salvar</button>

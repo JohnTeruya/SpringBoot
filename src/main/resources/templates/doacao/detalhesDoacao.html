@@ -9,8 +9,19 @@
 	<title>DoaçõesApp</title>	
 </head>
 <body>
+
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+  				<a href="#" class="brand-logo">Logo</a>
+ 				 <ul id="nav-mobile" class="right hide-on-med-and-down">
+    				<li><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Doações</a></li>
+  				</ul>
+			</div>
+  		</nav>
+	</header>
+
 	<h1>Doação</h1>
-	<h3><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Doações</a></h3>
 		<div th:each="doacao : ${doacao}" class="container">
 			<div class="row">
 				<p>Nome: <span th:text="${doacao.nome}"></span></p>
@@ -24,17 +35,21 @@
 				<button type="submit" class="waves-effect waves-light btn"> Adicionar Doador </button>
 			</form>
 		</div>
-		<h5>Lista de Doadores</h5>
-		<div class="container" th:each="doador : ${doadores}">
-			<div class="row">
-				<div class="input-field col s6">
-					<p><span th:text="${doador.nomeDoador}"></span></p>
-				</div>
-				<div class="input-field col s6">
-					<p><span th:text="${doador.rg}"></span></p>
-				</div>
-			</div>
-		</div>
+		<h5>Lista de Doadores: </h5>
+		<table class="container">
+			<thead>
+				<tr>
+					<th>Nome Doador</th>
+					<th>RG</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="doador : ${doadores}">
+					<td><span th:text="${doador.nomeDoador}"></span></td>
+					<td><span th:text="${doador.rg}"></span></td>
+				</tr>
+			</tbody>		
+		</table>
 	<!-- Deafult Scripts -->	
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
