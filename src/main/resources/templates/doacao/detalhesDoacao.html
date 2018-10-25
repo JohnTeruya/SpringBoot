@@ -9,8 +9,8 @@
 	<title>DoaçõesApp</title>	
 </head>
 <body>
-	<h1>Doação</h1>
-	<h3><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Doações</a></h3>
+	<h1>Listagem de Doações</h1>
+	<h3><a href="/doacoes" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Doadores</a></h3>
 		<div th:each="doacao : ${doacao}" class="container">
 			<div class="row">
 				<p>Nome: <span th:text="${doacao.nome}"></span></p>
@@ -19,12 +19,17 @@
 				<p>Horário: <span th:text="${doacao.horario}"></span></p>
 			</div>
 			<form method="POST">
-				Nome: <input type="text" value="" name="nomeDoador"/>
-				RG: <input type="text" value="" name="rg"/>
-				<button type="submit" class="waves-effect waves-light btn"> Adicionar Doador </button>
+				<div class="row">
+					<div class="input-field col s6">
+						Item Doado:<input type="text" value="" name="nomeDoador"/>
+					</div>	
+					<div class="input-field col s6">	
+						Tipo do Item:<input type="text" value="" name="rg"/>
+					</div>	
+						<button type="submit" class="waves-effect waves-light btn"> Adicionar Nova Doação </button>
 			</form>
 		</div>
-		<h5>Lista de Doadores</h5>
+		<h5>Lista de Doações</h5>
 		<div class="container" th:each="doador : ${doadores}">
 			<div class="row">
 				<div class="input-field col s6">
