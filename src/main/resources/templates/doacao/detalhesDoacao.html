@@ -18,9 +18,6 @@
 				<p>Data: <span th:text="${doacao.data}"></span></p>
 				<p>Horário: <span th:text="${doacao.horario}"></span></p>
 			</div>
-			
-			<th:block th:include="mensagemValidacao"></th:block>
-			
 			<form method="POST">
 				Nome: <input type="text" value="" name="nomeDoador"/>
 				RG: <input type="text" value="" name="rg"/>
