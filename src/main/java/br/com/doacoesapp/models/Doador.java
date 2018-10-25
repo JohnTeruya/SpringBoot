@@ -1,39 +1,46 @@
 package br.com.doacoesapp.models;
 
+
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-public class Doador {
+@Entity
+public class Doador{
 	
 	@Id
 	private String rg;
-	private String NomeDoador;
+	
+	private String nomeDoador;
 	
 	@ManyToOne
 	private Doacao doacao;
+
 	
 	
-	
-	
-	public Doacao getDoacao() {
-		return doacao;
-	}
-	public void setDoacao(Doacao doacao) {
-		this.doacao = doacao;
-	}
 	public String getRg() {
 		return rg;
 	}
+
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
+
 	public String getNomeDoador() {
-		return NomeDoador;
+		return nomeDoador;
 	}
-	public void setNome_doador(String NomeDoador) {
-		this.NomeDoador = NomeDoador;
+
+	public void setNomeDoador(String nomeDoador) {
+		this.nomeDoador = nomeDoador;
 	}
-	
-	
+
+	public Doacao getDoacao() {
+		return doacao;
+	}
+
+	public void setDoacao(Doacao doacao) {
+		this.doacao = doacao;
+	}
+
 	
 }

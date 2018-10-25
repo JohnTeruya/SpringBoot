@@ -18,13 +18,22 @@
 				<p>Data: <span th:text="${doacao.data}"></span></p>
 				<p>Horário: <span th:text="${doacao.horario}"></span></p>
 			</div>
-			
 			<form method="POST">
-				<input type="text" value="" name="NomeDoador">
-				<input type="text" value="" name="rg">
-				<button type="submit"> Adicionar Doador </button>
+				Nome: <input type="text" value="" name="nomeDoador"/>
+				RG: <input type="text" value="" name="rg"/>
+				<button type="submit" class="waves-effect waves-light btn"> Adicionar Doador </button>
 			</form>
-			
+		</div>
+		<h5>Lista de Doadores</h5>
+		<div class="container" th:each="doador : ${doadores}">
+			<div class="row">
+				<div class="input-field col s6">
+					<p><span th:text="${doador.nomeDoador}"></span></p>
+				</div>
+				<div class="input-field col s6">
+					<p><span th:text="${doador.rg}"></span></p>
+				</div>
+			</div>
 		</div>
 	<!-- Deafult Scripts -->	
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>

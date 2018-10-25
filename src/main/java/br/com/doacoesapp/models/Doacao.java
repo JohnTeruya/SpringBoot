@@ -24,7 +24,7 @@ public class Doacao implements Serializable{
 	private String horario;
 	
 	@OneToMany
-	private List<Doador>doador;
+	private List<Doador> doador;
 	
 	public long getCodigo() {
 		return codigo;
