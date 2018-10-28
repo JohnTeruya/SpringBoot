@@ -20,7 +20,8 @@
   		</nav>
 	</header>
 	<h1>Cadastro de Doações:</h1>
-	<form class="container" method="POST">
+	<th:block th:include="mensagemValidacao"></th:block>
+	<form class="container" method="post">
 		Nome: <input type="text" value="" name="nome"/>
 		<div class="row">
 			<div class="input-field col s6">

@@ -7,4 +7,5 @@ import br.com.doacoesapp.models.Doador;
 
 public interface RepositoryDoador extends CrudRepository<Doador, String>{
 	Iterable<Doador> findByDoacao(Doacao doacao);
+	Doador findByRg(String rg);
 }
